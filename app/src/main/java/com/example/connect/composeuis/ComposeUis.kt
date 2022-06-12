@@ -28,8 +28,15 @@ fun LandingPage(modifier: Modifier =Modifier){
 
     }
 }
+@Composable
+fun HomeScreen(modifier:Modifier=Modifier){
+Column{
+    Text(text="ronex")
+}
+}
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
-    LandingPage()
+    //LandingPage()
+    HomeScreen()
 }

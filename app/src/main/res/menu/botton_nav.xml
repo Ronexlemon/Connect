@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Men"
+android:id="@+id/menwear"
+        android:icon="@drawable/ic_baseline_self_improvement_24"/>
+    <item android:title="Men"
+ android:id="@+id/womenwear"
+        android:icon="@drawable/ic_baseline_self_improvement_24"/>
+    <item android:title="Men"
+android:id="@+id/chiildren"
+        android:icon="@drawable/ic_baseline_self_improvement_24"/>
+    <item android:title="Men"
+android:id="@+id/all"
+        android:icon="@drawable/ic_baseline_self_improvement_24"/>
+
+
+
+</menu>
