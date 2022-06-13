@@ -1,12 +1,10 @@
 package com.example.connect.composeuis
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,9 +16,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.connect.AppViewModel.AppViewModel
 import com.example.connect.R
 import com.example.connect.model.Men.clothes
-import com.example.connect.model.MenAssets
+import com.example.connect.model.MenAsset
+
+import com.example.connect.model.MenAsstes
 
 @Composable
 fun LandingPage(modifier: Modifier =Modifier){
@@ -34,11 +35,11 @@ fun LandingPage(modifier: Modifier =Modifier){
     }
 }
 @Composable
-fun HomeScreen(modifier:Modifier=Modifier){
-    
+fun HomeScreen(modifier:Modifier=Modifier,list:MutableList<MenAsset>){
+
 Column(modifier.fillMaxSize()){
     LazyColumn{
-        items(items=clothes, itemContent = {item->
+        items(items=list, itemContent = {item->
             //Todo inflating the item
             LazyItem(data = item)
 
@@ -49,7 +50,7 @@ Column(modifier.fillMaxSize()){
 }
 
 @Composable
-fun LazyItem(modifier:Modifier=Modifier,data:MenAssets) {
+fun LazyItem(modifier:Modifier=Modifier, data: MenAsset) {
     Card(
         modifier
             .fillMaxWidth()
@@ -68,5 +69,5 @@ fun LazyItem(modifier:Modifier=Modifier,data:MenAssets) {
 @Composable
 fun DefaultPreview(){
     //LandingPage()
-    HomeScreen()
+   // HomeScreen()
 }

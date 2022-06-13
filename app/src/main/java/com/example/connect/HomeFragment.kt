@@ -8,12 +8,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import com.example.connect.AppViewModel.AppViewModel
 import com.example.connect.composeuis.HomeScreen
 import com.example.connect.databinding.FragmentHomeBinding
+import com.example.connect.model.MenAsset
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
    private  lateinit var  binding:FragmentHomeBinding
+
+   private val  viewModel: AppViewModel by viewModels()
+    private  lateinit var  menlist :MutableList<MenAsset>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +48,11 @@ class HomeFragment : Fragment() {
             }
         }
         binding.homecompose.setContent {
-HomeScreen()
+            viewModel.response.observe(viewLifecycleOwner, Observer {
+              menlist = it.results
+            })
+            HomeScreen(list = menlist)
+
         }
         return binding.root
     }
