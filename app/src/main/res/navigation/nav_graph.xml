@@ -16,6 +16,5 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.connect.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="HomeFragment" />
 </navigation>

@@ -9,7 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
+
+import androidx.navigation.findNavController
+
+
 import com.example.connect.composeuis.LandingPage
 import com.example.connect.databinding.FragmentLandingPageBinding
 
@@ -30,19 +33,18 @@ class LandingPageFragment : Fragment() {
         binding.compose.setContent {
 LandingPage()
         }
+
  navi()
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        navi()
-    }
+
     private fun navi() {
 
         Handler(Looper.getMainLooper()).postDelayed({
 
-            findNavController().navigate(R.id.action_landingPageFragment_to_homeFragment)
+requireView().findNavController().navigate(R.id.action_landingPageFragment_to_homeFragment)
+
 
         }, 2000)
     }
