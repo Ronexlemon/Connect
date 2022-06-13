@@ -3,6 +3,9 @@ package com.example.connect.composeuis
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -16,6 +19,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.connect.R
+import com.example.connect.model.Men.clothes
+import com.example.connect.model.MenAssets
 
 @Composable
 fun LandingPage(modifier: Modifier =Modifier){
@@ -30,10 +35,35 @@ fun LandingPage(modifier: Modifier =Modifier){
 }
 @Composable
 fun HomeScreen(modifier:Modifier=Modifier){
-Column{
-    Text(text="ronex")
+    
+Column(modifier.fillMaxSize()){
+    LazyColumn{
+        items(items=clothes, itemContent = {item->
+            //Todo inflating the item
+            LazyItem(data = item)
+
+        })
+    }
+
 }
 }
+
+@Composable
+fun LazyItem(modifier:Modifier=Modifier,data:MenAssets) {
+    Card(
+        modifier
+            .fillMaxWidth()
+            .wrapContentHeight()){
+        Column(modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceEvenly){
+            Text(text="${data.description}")
+            Image(painter = painterResource(id =data.image!!), contentDescription = null)
+            Text(text="${data.description}")
+
+        }
+    }
+
+}
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(){
