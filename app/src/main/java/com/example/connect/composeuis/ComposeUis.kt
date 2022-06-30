@@ -22,6 +22,7 @@ import com.example.connect.model.Men.clothes
 import com.example.connect.model.MenAsset
 
 import com.example.connect.model.MenAsstes
+import com.example.connect.model.Products
 
 @Composable
 fun LandingPage(modifier: Modifier =Modifier){
@@ -35,7 +36,7 @@ fun LandingPage(modifier: Modifier =Modifier){
     }
 }
 @Composable
-fun HomeScreen(modifier:Modifier=Modifier,list:MutableList<MenAsset>){
+fun HomeScreen(modifier:Modifier=Modifier,list:List<Products>){
 
 Column(modifier.fillMaxSize()){
     LazyColumn{
@@ -50,15 +51,15 @@ Column(modifier.fillMaxSize()){
 }
 
 @Composable
-fun LazyItem(modifier:Modifier=Modifier, data: MenAsset) {
+fun LazyItem(modifier:Modifier=Modifier, data: Products) {
     Card(
         modifier
             .fillMaxWidth()
             .wrapContentHeight()){
         Column(modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceEvenly){
-            Text(text="${data.description}")
-            Image(painter = painterResource(id =data.image!!), contentDescription = null)
-            Text(text="${data.description}")
+            Text(text="${data.productDescription}")
+            //Image(painter = painterResource(id =data.image!!), contentDescription = null)
+            Text(text="${data.productName}")
 
         }
     }
