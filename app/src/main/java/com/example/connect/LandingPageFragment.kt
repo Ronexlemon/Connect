@@ -46,7 +46,7 @@ LandingPage()
 requireView().findNavController().navigate(R.id.action_landingPageFragment_to_homeFragment)
 
 
-        }, 2000)
+        }, 3000)
     }
 
 }
