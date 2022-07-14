@@ -7,9 +7,12 @@
         <entry key="../../../../layout/compose-model-1654231335384.xml" value="0.15962837837837837" />
         <entry key="../../../../layout/compose-model-1655027271204.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16875" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.16875" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_landing_page.xml" value="0.16875" />
+        <entry key="app/src/main/res/layout/header.xml" value="0.1265625" />
+        <entry key="app/src/main/res/layout/menulayout.xml" value="0.13518518518518519" />
         <entry key="app/src/main/res/menu/botton_nav.xml" value="0.16875" />
+        <entry key="app/src/main/res/menu/drawer.xml" value="0.142578125" />
       </map>
     </option>
   </component>

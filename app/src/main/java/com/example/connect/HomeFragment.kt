@@ -1,5 +1,6 @@
 package com.example.connect
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -27,6 +29,9 @@ class HomeFragment : Fragment() {
 
    private val  viewModel: AppViewModel by viewModels()
     private  lateinit var  menlist :MutableList<Products>
+
+    private lateinit var  drawerToggle: ActionBarDrawerToggle
+
 
 
     override fun onCreateView(
@@ -53,6 +58,14 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+        drawerToggle = ActionBarDrawerToggle(requireActivity(),binding.drawer,R.string.nav_open,R.string.nav_close)
+        binding.drawer.addDrawerListener(drawerToggle)
+        drawerToggle.syncState()
+        (activity as AppCompatActivity).supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeButtonEnabled(true)
+        }
+        binding.drawer.setBackgroundColor(Color.LTGRAY);
         binding.homecompose.setContent {
  val data by viewModel.state.collectAsState()
 

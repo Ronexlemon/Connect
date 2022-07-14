@@ -5,20 +5,24 @@
     tools:showIn="navigation_view">
     <item android:title="@string/home"
         android:id="@+id/home"
+android:actionLayout="@layout/menulayout"
         android:icon="@drawable/ic_baseline_home_24"/>
     <item android:title="@string/men"
         android:id="@+id/menwear"
-        
+        android:actionLayout="@layout/menulayout"
+        app:showAsAction="always"
         android:icon="@drawable/trousers"/>
 
     <item android:title="@string/women"
- android:id="@+id/womenwear"
+        android:id="@+id/womenwear"
+        app:showAsAction="always"
         android:icon="@drawable/skirt"/>
     <item android:title="@string/children"
-android:id="@+id/chiildren"
+        android:id="@+id/chiildren"
+        app:showAsAction="always"
         android:icon="@drawable/child"/>
     <item android:title="@string/all"
-android:id="@+id/all"
+        android:id="@+id/all"
         android:icon="@drawable/ic_baseline_border_all_24"/>
 
 
