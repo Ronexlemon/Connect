@@ -8,4 +8,7 @@
     <string name="children">children</string>
     <string name="women">Women</string>
     <string name="men">Men</string>
+    <string name="home">home</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>
